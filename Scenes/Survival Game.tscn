@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://gqinmonioyal"]
+
+[ext_resource type="PackedScene" uid="uid://dqnvktw1muhoa" path="res://Scenes/Player.tscn" id="1_0kjnw"]
+[ext_resource type="PackedScene" uid="uid://g5b6bq2ly3qf" path="res://Scenes/Pine_tree.tscn" id="2_totqp"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -15.0
+offset_right = 1075.0
+offset_bottom = 712.0
+
+[node name="pine_tree" parent="." instance=ExtResource("2_totqp")]
+position = Vector2(278, 238)
+
+[node name="pine_tree2" parent="." instance=ExtResource("2_totqp")]
+position = Vector2(858, 158)
+
+[node name="pine_tree3" parent="." instance=ExtResource("2_totqp")]
+position = Vector2(952, 510)
+
+[node name="pine_tree5" parent="." instance=ExtResource("2_totqp")]
+position = Vector2(682, 585)
+
+[node name="pine_tree4" parent="." instance=ExtResource("2_totqp")]
+position = Vector2(200, 540)
+
+[node name="Player" parent="." instance=ExtResource("1_0kjnw")]
+position = Vector2(579, 236)

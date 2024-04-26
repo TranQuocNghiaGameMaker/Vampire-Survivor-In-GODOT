@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqnvktw1muhoa"]
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_8y7ot"]
-[ext_resource type="Script" path="res://Player.gd" id="1_wava7"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wava7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06x1l"]
 radius = 33.0

@@ -11,10 +11,9 @@ y_sort_enabled = true
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 26.0
-offset_top = 45.0
-offset_right = 1101.0
-offset_bottom = 772.0
+offset_left = -1.0
+offset_right = 1074.0
+offset_bottom = 727.0
 
 [node name="pine_tree" parent="." instance=ExtResource("2_totqp")]
 position = Vector2(278, 238)

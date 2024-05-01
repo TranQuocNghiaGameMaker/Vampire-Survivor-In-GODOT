@@ -6,10 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w75dn"]
 radius = 59.0339
 
-[node name="Mob" type="CharacterBody2D"]
+[node name="Mob" type="CharacterBody2D" node_paths=PackedStringArray("slime_Anim")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_yasgg")
+slime_Anim = NodePath("Slime")
 
 [node name="Slime" parent="." instance=ExtResource("2_3e5a5")]
 

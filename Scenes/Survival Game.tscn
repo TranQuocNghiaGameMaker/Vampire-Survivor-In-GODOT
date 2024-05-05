@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://gqinmonioyal"]
+[gd_scene load_steps=5 format=3 uid="uid://gqinmonioyal"]
 
 [ext_resource type="PackedScene" uid="uid://dqnvktw1muhoa" path="res://Scenes/Player.tscn" id="1_0kjnw"]
+[ext_resource type="Script" path="res://Scenes/Survival Game.gd" id="1_7sit8"]
 [ext_resource type="PackedScene" uid="uid://g5b6bq2ly3qf" path="res://Scenes/Pine_tree.tscn" id="2_totqp"]
-[ext_resource type="PackedScene" uid="uid://dbd0wrbvr32sj" path="res://Scenes/mob.tscn" id="3_gkevq"]
+
+[sub_resource type="Curve2D" id="Curve2D_op22a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1731, 719, 0, 0, 0, 0, 1726, -574, 0, 0, 0, 0, -612, -601, 0, 0, 0, 0, -607, 703, 0, 0, 0, 0, 1745, 683)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_7sit8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -33,11 +40,18 @@ position = Vector2(200, 540)
 [node name="Player" parent="." instance=ExtResource("1_0kjnw")]
 position = Vector2(579, 236)
 
-[node name="Mob" parent="." instance=ExtResource("3_gkevq")]
-position = Vector2(505, 459)
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-189, 217)
+curve = SubResource("Curve2D_op22a")
 
-[node name="Mob2" parent="." instance=ExtResource("3_gkevq")]
-position = Vector2(318, 475)
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(1197.23, -580.106)
+rotation = -3.13004
+progress = 1821.82
 
-[node name="Mob3" parent="." instance=ExtResource("3_gkevq")]
-position = Vector2(408, 646)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
